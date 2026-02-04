@@ -1,94 +1,145 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight, Clock } from "lucide-react";
 
 export function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contato" className="py-24 md:py-32 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/50 to-secondary/30" />
+    <section id="contato" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-card/50" />
+        <div 
+          className="absolute inset-0 opacity-30"
+          style={{
+            background: "radial-gradient(ellipse at bottom right, hsl(38 55% 55% / 0.1), transparent 60%)"
+          }}
+        />
+      </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
-          <div className="text-center mb-12">
-            <span className="text-primary uppercase tracking-[0.2em] text-sm font-medium mb-4 block">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <span className="badge-premium mb-6">
+              <span className="gold-dot" />
               Vamos Conversar
             </span>
-            <h2 className="section-title">Entre em Contato</h2>
-            <p className="section-subtitle mx-auto mt-4">
-              Estamos prontos para ajudar sua empresa a conquistar os
-              benefícios da Zona Franca de Manaus.
+            <h2 className="heading-section mb-4">
+              Pronto para <span className="text-gradient-gold">Expandir</span>?
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Agende uma consulta gratuita e descubra como podemos ajudar sua empresa 
+              a conquistar os benefícios da Zona Franca de Manaus.
             </p>
           </div>
 
+          {/* Contact Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="glass-card p-8 md:p-12"
+            className="card-premium p-10 md:p-14"
           >
             <div className="grid md:grid-cols-2 gap-12">
               {/* Contact Info */}
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-serif font-semibold text-foreground mb-6">
+                  <h3 className="text-2xl font-serif font-semibold text-foreground mb-8">
                     Informações de Contato
                   </h3>
-                  <div className="space-y-4">
+                  <div className="space-y-5">
                     <a
-                      href="mailto:contato@vertice.com.br"
+                      href="mailto:contato@verticeconsultoria.com.br"
                       className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
                     >
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <Mail className="w-5 h-5 text-primary" />
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <Mail className="w-6 h-6 text-primary" />
                       </div>
-                      <span>contato@vertice.com.br</span>
+                      <div>
+                        <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Email</p>
+                        <span className="text-foreground">contato@verticeconsultoria.com.br</span>
+                      </div>
                     </a>
                     <a
                       href="tel:+559212345678"
                       className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
                     >
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <Phone className="w-5 h-5 text-primary" />
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <Phone className="w-6 h-6 text-primary" />
                       </div>
-                      <span>+55 (92) 1234-5678</span>
+                      <div>
+                        <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Telefone</p>
+                        <span className="text-foreground">+55 (92) 1234-5678</span>
+                      </div>
                     </a>
-                    <div className="flex items-center gap-4 text-muted-foreground">
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <MapPin className="w-5 h-5 text-primary" />
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                        <MapPin className="w-6 h-6 text-primary" />
                       </div>
-                      <span>Manaus, Amazonas - Brasil</span>
+                      <div>
+                        <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Localização</p>
+                        <span className="text-foreground">Manaus, Amazonas - Brasil</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                        <Clock className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Horário</p>
+                        <span className="text-foreground">Seg - Sex: 8h às 18h</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* CTA */}
+              {/* CTA Section */}
               <div className="flex flex-col justify-center">
                 <div className="space-y-6">
-                  <h4 className="text-xl font-serif text-foreground">
-                    Pronto para expandir seu negócio?
+                  <h4 className="text-2xl font-serif text-foreground">
+                    Agende sua Consultoria Gratuita
                   </h4>
-                  <p className="text-muted-foreground">
-                    Agende uma consulta gratuita com nossos especialistas e
-                    descubra como podemos ajudar sua empresa a aproveitar todas
-                    as vantagens da Zona Franca de Manaus.
+                  <p className="text-muted-foreground leading-relaxed">
+                    Nossa equipe de especialistas está pronta para analisar seu projeto e 
+                    apresentar as melhores oportunidades para sua empresa na Zona Franca de Manaus.
                   </p>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-center gap-3 text-muted-foreground">
+                      <span className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+                        <span className="text-primary text-xs">✓</span>
+                      </span>
+                      Análise inicial sem compromisso
+                    </li>
+                    <li className="flex items-center gap-3 text-muted-foreground">
+                      <span className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+                        <span className="text-primary text-xs">✓</span>
+                      </span>
+                      Proposta personalizada em 48h
+                    </li>
+                    <li className="flex items-center gap-3 text-muted-foreground">
+                      <span className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+                        <span className="text-primary text-xs">✓</span>
+                      </span>
+                      Atendimento exclusivo
+                    </li>
+                  </ul>
                   <a
-                    href="mailto:contato@vertice.com.br"
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_8px_30px_hsl(38_40%_60%_/_0.3)] hover:-translate-y-0.5 group"
+                    href="mailto:contato@verticeconsultoria.com.br"
+                    className="btn-primary inline-flex mt-4"
                   >
-                    Solicitar Consulta
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    Solicitar Consultoria
+                    <ArrowRight className="w-5 h-5" />
                   </a>
                 </div>
               </div>
