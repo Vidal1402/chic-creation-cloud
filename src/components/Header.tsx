@@ -43,7 +43,7 @@ export function Header() {
   }} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "bg-background/90 backdrop-blur-xl border-b border-border/50 py-4" : "bg-transparent py-6"}`}>
       <div className="container mx-auto flex items-center justify-between">
         <a href="#" className="flex items-center gap-3 group">
-          <img src={logo} alt="Vértice" className="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
+          <img src={logo} alt="Vértice" className="h-20 md:h-24 w-auto transition-transform duration-300 group-hover:scale-105" />
           
         </a>
 
