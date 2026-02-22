@@ -61,26 +61,26 @@ export function Contact() {
                   <div className="space-y-5">
                     <a
                       href={`mailto:${EMAIL}`}
-                      className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
+                      className="flex items-start gap-4 text-muted-foreground hover:text-primary transition-colors group"
                     >
-                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <div className="w-14 h-14 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                         <Mail className="w-6 h-6 text-primary" />
                       </div>
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Email</p>
-                        <span className="text-foreground">{EMAIL}</span>
+                        <span className="text-foreground break-all">{EMAIL}</span>
                       </div>
                     </a>
                     <a
                       href={WHATSAPP_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
+                      className="flex items-start gap-4 text-muted-foreground hover:text-primary transition-colors group"
                     >
-                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <div className="w-14 h-14 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                         <MessageCircle className="w-6 h-6 text-primary" />
                       </div>
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">WhatsApp</p>
                         <span className="text-foreground">{PHONE_DISPLAY}</span>
                       </div>
@@ -89,30 +89,30 @@ export function Contact() {
                       href={INSTAGRAM_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
+                      className="flex items-start gap-4 text-muted-foreground hover:text-primary transition-colors group"
                     >
-                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <div className="w-14 h-14 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                         <Instagram className="w-6 h-6 text-primary" />
                       </div>
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Instagram</p>
                         <span className="text-foreground">{INSTAGRAM_HANDLE}</span>
                       </div>
                     </a>
-                    <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <div className="flex items-start gap-4">
+                      <div className="w-14 h-14 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center">
                         <MapPin className="w-6 h-6 text-primary" />
                       </div>
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Localização</p>
-                        <span className="text-foreground">{ENDERECO}</span>
+                        <span className="text-foreground block text-left leading-snug">{ENDERECO}</span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <div className="flex items-start gap-4">
+                      <div className="w-14 h-14 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center">
                         <Clock className="w-6 h-6 text-primary" />
                       </div>
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Horário</p>
                         <span className="text-foreground">Seg - Sex: 8h às 18h</span>
                       </div>
