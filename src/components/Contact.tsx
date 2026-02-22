@@ -49,11 +49,11 @@ export function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="card-premium p-10 md:p-14"
+            className="card-premium p-10 md:p-14 overflow-visible md:overflow-hidden"
           >
             <div className="grid md:grid-cols-2 gap-12">
               {/* Contact Info */}
-              <div className="space-y-8">
+              <div className="space-y-8 min-w-0">
                 <div>
                   <h3 className="text-2xl font-serif font-semibold text-foreground mb-8">
                     Informações de Contato
@@ -122,7 +122,7 @@ export function Contact() {
               </div>
 
               {/* CTA Section */}
-              <div className="flex flex-col justify-center">
+              <div className="flex flex-col justify-center min-w-0 pt-6 md:pt-0 border-t border-border/40 md:border-t-0">
                 <div className="space-y-6">
                   <h4 className="text-2xl font-serif text-foreground">
                     Agende sua Consultoria Gratuita
