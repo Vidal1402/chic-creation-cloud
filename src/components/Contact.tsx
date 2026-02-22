@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Phone, MapPin, ArrowRight, Clock } from "lucide-react";
+import { Mail, MapPin, ArrowRight, Clock, MessageCircle, Instagram } from "lucide-react";
+import { WHATSAPP_URL, INSTAGRAM_URL, ENDERECO, PHONE_DISPLAY, INSTAGRAM_HANDLE, EMAIL } from "@/lib/contact";
 
 export function Contact() {
   const ref = useRef(null);
@@ -59,7 +60,7 @@ export function Contact() {
                   </h3>
                   <div className="space-y-5">
                     <a
-                      href="mailto:contato@verticeconsultoria.com.br"
+                      href={`mailto:${EMAIL}`}
                       className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
                     >
                       <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -67,19 +68,35 @@ export function Contact() {
                       </div>
                       <div>
                         <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Email</p>
-                        <span className="text-foreground">contato@verticeconsultoria.com.br</span>
+                        <span className="text-foreground">{EMAIL}</span>
                       </div>
                     </a>
                     <a
-                      href="tel:+559212345678"
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
                     >
                       <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <Phone className="w-6 h-6 text-primary" />
+                        <MessageCircle className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Telefone</p>
-                        <span className="text-foreground">+55 (92) 1234-5678</span>
+                        <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">WhatsApp</p>
+                        <span className="text-foreground">{PHONE_DISPLAY}</span>
+                      </div>
+                    </a>
+                    <a
+                      href={INSTAGRAM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
+                    >
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <Instagram className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Instagram</p>
+                        <span className="text-foreground">{INSTAGRAM_HANDLE}</span>
                       </div>
                     </a>
                     <div className="flex items-center gap-4">
@@ -88,7 +105,7 @@ export function Contact() {
                       </div>
                       <div>
                         <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Localização</p>
-                        <span className="text-foreground">Manaus, Amazonas - Brasil</span>
+                        <span className="text-foreground">{ENDERECO}</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -135,10 +152,12 @@ export function Contact() {
                     </li>
                   </ul>
                   <a
-                    href="mailto:contato@verticeconsultoria.com.br"
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn-primary inline-flex mt-4"
                   >
-                    Solicitar Consultoria
+                    Falar no WhatsApp
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </div>

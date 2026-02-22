@@ -1,13 +1,11 @@
 import { MessageCircle } from "lucide-react";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 export function WhatsAppButton() {
-  const phoneNumber = "5592912345678"; // Replace with actual number
-  const message = encodeURIComponent("Olá! Gostaria de saber mais sobre os serviços da Vértice Consultoria.");
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
     <a
-      href={whatsappUrl}
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-float group"
